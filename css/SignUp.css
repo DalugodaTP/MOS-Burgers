@@ -1,0 +1,7 @@
+.btn{
+    background-color: rgba(255, 153, 0, 1);
+    color: white;
+    border-color: white;
+    --bs-btn-hover-bg: white;
+    --bs-btn-hover-color: black;
+}
