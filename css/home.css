@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Galdeano&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+span {
+    font-family: 'Galada', cursive;
+    color: rgba(255, 153, 0, 1);
+}
+
+h1 {
+    font-family: 'Galada', cursive;
+}
+
+/* Image */
+
+#imgBurger {
+    height: 700px;
+    margin-right: 50px;
+}
+
+/* Content */
+
+#burger {
+    font-family: 'Galdeano', sans-serif;
+    font-size: 61px;
+    color: rgba(234, 0, 0, 1);
+}
+
+p {
+    font-size: 25px;
+    text-align: justify;
+}
+
+p#logo-text {
+    font-family: 'Galada', cursive;
+    font-size: 100px;
+}
+
+#currentPrice {
+    color: #F90;
+    font-family: Gelasio;
+    font-size: 61px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+#oldPrice {
+    color: #575757;
+    font-family: Gelasio;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background: url('../images/price-cut.png') no-repeat;
+    background-position: center center !important;
+    background-size: contain;
+}
+
+.btn {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
