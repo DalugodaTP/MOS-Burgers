@@ -8,13 +8,13 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/home.css">
-    <title>Document</title>
+    <title>Menu</title>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
     <!--Header-->
 
-    <div class="container">
+    <!-- <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
             <a href="https://www.google.com/"
                 class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
@@ -26,47 +26,48 @@
 
             <ul class="nav nav-pills">
                 <li class="nav-item"><a href="HomePage.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Menu</a></li>
+                <li class="nav-item"><a href="Menu.html" class="nav-link active">Menu</a></li>
                 <li class="nav-item"><a href="AboutUs.html" class="nav-link">About us</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
-                <li class="nav-item"><a href="Login.html" class="nav-link active">Login</a></li>
+                <li class="nav-item"><a href="customerLogin.html" class="nav-link">Login</a></li>
+                <li class="nav-item"><a href="SignUp.html" class="nav-link">Sign up</a></li>
                 <li class="nav-item"><a href="SignUp.html" class="nav-link">Sign up</a></li>
             </ul>
         </header>
 
+    </div> -->
+
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="https://www.google.com/"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+
+                <h1 id="logo-text">Mos <span>Burgers</span></h1>
+            </a>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="HomePage.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="Menu.html" class="nav-link active">Menu</a></li>
+                <li class="nav-item"><a href="AboutUs.html" class="nav-link">About us</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
+                <li class="nav-item"><a href="customerLogin.html" class="nav-link">Login</a></li>
+                <li class="nav-item">
+                    <a href="#" class="cart"  role="button" aria-expanded="false">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20" width="40" height="40">
+                            <path stroke="rgba(87, 87, 87, 1)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1" />
+                        </svg>
+                    </a>
+                </li>
+                <li><span class="count">0</span></li>
+            </ul>
+        </header>
     </div>
 
     <!-- Content -->
-    
 
-    <div class="col-4 offset-4 align-middle mt-5">
-        <main class="form-signin w-100 m-auto">
-            <form>
-                <img src="images/logo-burger.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="100"
-                height="500" loading="lazy">
-              <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-          
-              <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
-              </div>
-              <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-              </div>
-          
-              <div class="form-check text-start my-3">
-                <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                  Remember me
-                </label>
-              </div>
-              <button class="btn btn-danger rounded-pill col-3 mt-2 " type="button">Login</button>
-              <p class="mt-5 mb-3 text-body-secondary">© 2024</p>
-            </form>
-          </main>
-    </div>
-   
+
 
     <!-- Footer -->
     <div class="container mt-auto">
@@ -75,13 +76,14 @@
 
             <a href="HomePage.html"
                 class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <img src="images/logo-burger.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="100"
-                    height="500" loading="lazy">
+                <img src="images/logo-burger.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                    width="100" height="500" loading="lazy">
             </a>
 
             <ul class="nav col-md-4 justify-content-end">
                 <li class="nav-item"><a href="HomePage.html" class="nav-link px-2 text-body-secondary">Home</a></li>
-                <li class="nav-item"><a href="Login.html" class="nav-link px-2 text-body-secondary">Login</a></li>
+                <li class="nav-item"><a href="customerLogin.html" class="nav-link px-2 text-body-secondary">Login</a>
+                </li>
                 <li class="nav-item"><a href="AboutUs.html" class="nav-link px-2 text-body-secondary">About</a></li>
             </ul>
         </footer>

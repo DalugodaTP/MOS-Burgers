@@ -1,21 +1,36 @@
 /* Edit to navigation */
-.nav{
-    --bs-nav-link-color: rgba(87, 87, 87, 1);
-    --bs-nav-link-hover-color: rgba(255, 153, 0, 1);
-    --bs-nav-link-font-size: 25px;
-    font-family: 'Galada', cursive;
+.nav {
+  --bs-nav-link-color: rgba(87, 87, 87, 1);
+  --bs-nav-link-hover-color: rgba(255, 153, 0, 1);
+  --bs-nav-link-font-size: 25px;
+  font-family: 'Galada', cursive;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link
-{
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
   color: rgba(255, 153, 0, 1);
   background: url('../images/underline.png') no-repeat;
   background-size: 100% auto;
   background-position: bottom center !important;
 }
 
-.bi{
+.bi {
   width: 0px;
+}
+
+.count {
+  color: rgba(87, 87, 87, 1);
+  padding-top: 10px;
+  display: inline-block;
+  height: 56px;
+  width: 56px;
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Galada', cursive;
+}
+
+li.nav-item:nth-child(6){
+  margin-left: 10px;
 }
 
 /* Edit to Footer */
