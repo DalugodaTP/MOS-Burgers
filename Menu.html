@@ -16,30 +16,7 @@
     
     <!--Header-->
 
-    <!-- <div class="container">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-            <a href="https://www.google.com/"
-                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <svg class="bi me-2" width="40" height="32">
-                    <use xlink:href="" />
-                </svg>
-                <h1 id="logo-text">Mos <span>Burgers</span></h1>
-            </a>
-
-            <ul class="nav nav-pills">
-                <li class="nav-item"><a href="HomePage.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="Menu.html" class="nav-link active">Menu</a></li>
-                <li class="nav-item"><a href="AboutUs.html" class="nav-link">About us</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
-                <li class="nav-item"><a href="customerLogin.html" class="nav-link">Login</a></li>
-                <li class="nav-item"><a href="SignUp.html" class="nav-link">Sign up</a></li>
-                <li class="nav-item"><a href="SignUp.html" class="nav-link">Sign up</a></li>
-            </ul>
-        </header>
-
-    </div> -->
-
-    <div class="container">
+    <div class="container sticky">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
             <a href="https://www.google.com/"
                 class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
@@ -71,8 +48,19 @@
     <!-- Content -->
     
     <!-- Search Bar -->
-    <div class="container mb-4">
+    <!-- <div class="container mb-4">
         <input type="text" name="" id="" placeholder="Search">
+    </div> -->
+
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col-2"><input type="text" name="" id="txtSearch" placeholder="Search"></div>
+            <div class="col-2"><button class="btn-selector" type="button" id="btnBurger" value="burger">Burger</button></div>
+            <div class="col-2"><button class="btn-selector" type="button" id="btnDrinks" value="chicken">Chicken</button></div>
+            <div class="col-2"><button class="btn-selector" type="button" id="btnPasta" value="pasta">Pasta</button></div>
+            <div class="col-2"><button class="btn-selector" type="button" id="btnSub" value="Submarine">Submarine</button></div>
+            <div class="col-2"><button class="btn-selector" type="button" id="btnFries" value="fries">Fries</button></div>
+        </div>
     </div>
 
     <div class="container">
@@ -94,9 +82,27 @@
             <div class="item">
                 <!-- addCartToHTML -->
             </div>
+        </div>
+        
+        <table>
+            <tr>
+                <td class="lbl">Gross Amount</td>
+                <td >:</td>
+                <td id="val_1">0.00</td>
+            </tr>
+            <tr>
+                <td class="lbl">Discount</td>
+                <td >:</td>
+                <td id="val_2">0.00</td>
+            </tr>
+            <tr>
+                <td class="lbl">Total</td>
+                <td >:</td>
+                <td id="val_3">0.00</td>
+            </tr>
+        </table>
 
         <!-- cart tab controllers -->
-        </div>
         <div class="btn">
             <button class="close">Close</button>
             <button class="checkOut">Check Out</button>

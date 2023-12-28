@@ -37,6 +37,16 @@
     cursor: pointer;
  }
 
+ /* .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+
+  .sticky + body {
+    padding-top: 102px;
+  } */
+
  /* cart tab */
 
 .cartTab{
@@ -63,13 +73,14 @@
 
 .cartTab h1{
     padding: 20px;
-    margin: 0;
+    margin-top: 20px;
     font-weight: 300;
 }
 
 .cartTab .btn{
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    height: 56px;
 }
 
 .cartTab .btn button{
@@ -79,6 +90,23 @@
     font-weight: 500;
     cursor: pointer;
 }
+
+.cartTab .text{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.lbl{
+    padding-left: 50px;
+    width: 200px;
+    font-family: 'Galdeano', sans-serif;
+    font-size: 20px;
+}
+
+.btn{
+    margin-top: 20px;
+}
+
 
 .cartTab .btn .close{
     background-color: #eee;
@@ -105,6 +133,21 @@
     color: #555;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.count-1{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 30px;
+}
+
+.icon-cart > svg:nth-child(1){
+    display: flex;
+    position: absolute;
 }
  
 
@@ -135,6 +178,38 @@
 .image > img:nth-child(1){
     margin-left: 5px;
 }
+
+.view{
+    color: white;
+}
+
+/* sorting items */
+
+.container.mb-4 div.row{
+    align-items: center;
+    height: 37px;
+    vertical-align:middle;
+    margin-top: 0px;
+}
+
+.btn-selector{
+    height: 37px;
+    width: 120px;
+    color: black;
+    background-color: #E88C0E;
+    font-family: 'Galada', cursive;
+    font-size: 25px;
+    margin-top: 0px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+div.col-2:nth-child(1) > input:nth-child(1){
+    width: 180px;
+    height: 37px;
+}
+
+
 
 /* Customize for different screens */
 

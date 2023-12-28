@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //--------------------Control product display--------------------------
 
-//get data from json file
 
 //get the listProduct from HTML
 let listProductHTML = document.querySelector('.listProduct');
@@ -31,6 +30,10 @@ let iconCartSpan = document.querySelector('.icon-cart span');
 let listProducts = [];
 //to Store the cart value
 let carts = [];
+
+//---data---
+let grossVal;
+let discountVal;
 
 
 //it will proceed to run initApp function - fetch data from the file
@@ -51,8 +54,10 @@ const initApp = () => {
             }
 
         })
+
 }
 initApp();
+
 
 //insert the data into DOM
 
@@ -121,17 +126,18 @@ const addCartToHTML = () => {
     //to update the span
     let totalQuantity = 0;
     if (carts.length > 0) {
-        carts.forEach(cart => {
-            totalQuantity = totalQuantity + cart.quantity;
+        carts.forEach(list => {
+            totalQuantity = totalQuantity + list.quantity;
             let newCart = document.createElement('div');
             newCart.classList.add('item');
 
             //for minus and plus
-            newCart.dataset.id = cart.product_id;
+            newCart.dataset.id = list.product_id;
 
             //retrieve other information
-            let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id);
+            let positionProduct = listProducts.findIndex((value) => value.id == list.product_id);
             let info = listProducts[positionProduct];
+            let total = info.price * list.quantity;
 
             newCart.innerHTML = `
             <div class="image">
@@ -141,16 +147,17 @@ const addCartToHTML = () => {
                 ${info.name}  
             </div>
             <div class="totalPrice">
-                $${info.price} 
+                Rs.${total}
             </div>
             <div class="quantity">
                 <span class="minus">-</span>
-                <span>${cart.quantity}</span>
+                <span>${list.quantity}</span>
                 <span class="plus">+</span>
             </div>`;
             //inject this new element into the list product class with appenChild
             listCartHTML.appendChild(newCart);
         })
+        updateView();
     }
     //update the iconCartSpan class from this function
     iconCartSpan.innerText = totalQuantity;
@@ -184,16 +191,115 @@ const changeQuantity = (product_id, type) => {
                 break;
 
             default:
-                let valueChange = carts[positionItemInCart].quantity -1;
-                if (valueChange>0) {
-                    carts[positionItemInCart].quantity =valueChange;
-                }else{
+                let valueChange = carts[positionItemInCart].quantity - 1;
+                if (valueChange > 0) {
+                    carts[positionItemInCart].quantity = valueChange;
+                } else {
                     carts.splice(positionItemInCart, 1); //remove the item 
+                    updateView();
+                    if (carts.length == 0) {
+                        document.querySelector('.cartTab').classList.toggle('showCart');
+                    }
                 }
                 break;
         }
     }
-    addCartToMemory();
     addCartToHTML();
+    addCartToMemory();
 }
 
+const updateView = () => {
+    //capture two outputs
+    let grossAmount = document.getElementById('val_1');
+    let discVal = document.getElementById('val_2');
+    let total = document.getElementById('val_3');
+
+    //get the sum of values from the array
+    let totalAmount = 0;
+    let totalDiscount = 0;
+    if (carts.length > 0) {
+        carts.forEach(cart => {
+            let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id);
+            let info = listProducts[positionProduct];
+            //calculate the gross amount
+            totalAmount += cart.quantity * info.price;
+
+            //calculate the discount
+            totalDiscount += cart.quantity * info.price * (info.discount / 100);
+        })
+    } else {
+        grossAmount.innerHTML = 0;
+        discVal.innerHTML = 0;
+    }
+    grossAmount.innerHTML = 'Rs. ' + totalAmount;
+    discVal.innerHTML = 'Rs. ' + totalDiscount;
+    total.innerHTML = 'Rs. ' + (totalAmount - totalDiscount);
+}
+
+
+//sort items
+
+
+document.addEventListener('click', (event) => {
+    //find the location where the user just clicked
+    let positionClick = event.target;
+
+    //-For the buttons
+    if (positionClick.value && positionClick.value.includes("burger")) {
+        listProductHTML.innerHTML = '';
+        let sortedList = listProducts.filter(item => item.name.includes('Burger'));
+        addDataToHTMLCustom(sortedList);
+
+    } else if (positionClick.value && positionClick.value.includes("chicken")) {
+        listProductHTML.innerHTML = '';
+        let sortedList = listProducts.filter(item => item.name.includes('Chicken'));
+        addDataToHTMLCustom(sortedList);
+
+    } else if (positionClick.value && positionClick.value.includes("pasta")) {
+        listProductHTML.innerHTML = '';
+        let sortedList = listProducts.filter(item => item.name.includes('Pasta'));
+        addDataToHTMLCustom(sortedList);
+
+    } else if (positionClick.value && positionClick.value.includes("Submarine")) {
+        listProductHTML.innerHTML = '';
+        let sortedList = listProducts.filter(item => item.name.includes('Submarine'));
+        addDataToHTMLCustom(sortedList);
+
+    } else if (positionClick.value && positionClick.value.includes("fries")) {
+        listProductHTML.innerHTML = '';
+        let sortedList = listProducts.filter(item => item.name.includes('Fries'));
+        addDataToHTMLCustom(sortedList);
+    }
+})
+
+document.getElementById('txtSearch').addEventListener("input", (event) => {
+    listProductHTML.innerHTML = '';
+    let sortedList = listProducts.filter(item => item.name.toLowerCase().includes(txtSearch.value.toLowerCase()));
+    addDataToHTMLCustom(sortedList);
+});
+
+
+const addDataToHTMLCustom = (list) => {
+    listProductHTML.innerHTML = '';
+    if (list.length > 0) {
+        list.forEach(product => {
+            //create a component with a class item
+            let newProduct = document.createElement('div');
+            newProduct.classList.add('item');
+            //pass a dataSet which are the id (recorded in the item class)
+            newProduct.dataset.id = product.id;
+            newProduct.innerHTML = `
+            <img src="${product.image}" alt="">
+            <h2>${product.name}</h2>
+            <div class="discount">${product.discount}%</div>
+            <div class="portion">${product.portion}</div>
+            <div class="price">Rs.${product.price}</div>
+            <button class="addCart">
+                Add to Cart
+            </button>`;
+
+            //inject this new element into the list product class with appenChild
+            listProductHTML.appendChild(newProduct);
+        })
+    }
+}
