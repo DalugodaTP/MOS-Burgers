@@ -1,0 +1,416 @@
+[
+    {
+        "id": "B1001",
+        "name": "Classic Burger",
+        "price": 750.0,
+        "discount": 0,
+        "category": "Burgers",
+        "portion": "Regular",
+        "image": "images/products/item_images/burger/classic_burger.jpg"
+    },
+    {
+        "id": "B1002",
+        "name": "Classic Burger",
+        "price": 1500.0,
+        "discount": 15,
+        "category": "Burgers",
+        "portion": "Large",
+        "image": "images/products/item_images/burger/classic_burger.jpg"
+    },
+    {
+        "id": "B1003",
+        "name": "Turkey Burger",
+        "price": 1600.0,
+        "discount": 0,
+        "category": "Burgers",
+        "portion": "Regular",
+        "image": "images/products/item_images/burger/turkey_burger.jpg"
+      },
+      {
+        "id": "B1004",
+        "name": "Chicken Burger",
+        "price": 1400.0,
+        "discount": 0,
+        "category": "Burgers",
+        "portion": "Large",
+        "image": "images/products/item_images/burger/chicken_burger.jpg"
+      },
+      {
+        "id": "B1005",
+        "name": "Chicken Burger",
+        "price": 800.0,
+        "discount": 20,
+        "category": "Burgers",
+        "portion": "Regular",
+        "image": "images/products/item_images/burger/chicken_burger.jpg"
+      },
+      {
+        "id": "B1006",
+        "name": "Cheese Burger",
+        "price": 1000.0,
+        "discount": 0,
+        "category": "Burgers",
+        "portion": "Large",
+        "image": "images/products/item_images/burger/cheese_burger.jpg"
+      },
+      {
+        "id": "B1007",
+        "name": "Cheese Burger",
+        "price": 600.0,
+        "discount": 0,
+        "category": "Burgers",
+        "portion": "Regular",
+        "image": "images/products/item_images/burger/cheese_burger.jpg"
+      },
+      {
+        "id": "B1008",
+        "name": "Bacon Burger",
+        "price": 650.0,
+        "discount": 15,
+        "category": "Burgers",
+        "portion": "Regular",
+        "image": "images/products/item_images/burger/bacon_burger.jpg"
+      },
+      {
+        "id": "B1009",
+        "name": "Shawarma Burger",
+        "price": 800.0,
+        "discount": 0,
+        "category": "Burgers",
+        "portion": "Regular",
+        "image": "images/products/item_images/burger/shawarma_burger.jpg"
+      },
+      {
+        "id": "B1010",
+        "name": "Olive Burger",
+        "price": 1800.0,
+        "discount": 0,
+        "category": "Burgers",
+        "portion": "Regular",
+        "image": "images/products/item_images/burger/olive_burger.jpg"
+      },
+      {
+        "id": "B1012",
+        "name": "Double-Cheese Burger",
+        "price": 1250.0,
+        "discount": 20,
+        "category": "Burgers",
+        "portion": "Regular",
+        "image": "images/products/item_images/burger/double_cheese_burger.jpg"
+      },
+      {
+        "id": "B1013",
+        "name": "Crispy Chicken Burger",
+        "price": 1200.0,
+        "discount": 0,
+        "category": "Burgers",
+        "portion": "Regular",
+        "image": "images/products/item_images/burger/crispy_chicken_burger.jpg"
+      },
+      {
+        "id": "B1014",
+        "name": "Crispy Chicken Burger",
+        "price": 1600.0,
+        "discount": 10,
+        "category": "Burgers",
+        "portion": "Large",
+        "image": "images/products/item_images/burger/crispy_chicken_burger.jpg"
+      },
+      {
+        "id": "B1015",
+        "name": "Paneer Burger",
+        "price": 900.0,
+        "discount": 0,
+        "category": "Burgers",
+        "portion": "Regular",
+        "image": "images/products/item_images/burger/paneer_burger.jpg"
+      },
+      {
+        "id": "B1016",
+        "name": "Crispy Chicken Submarine",
+        "price": 2000.0,
+        "discount": 0,
+        "category": "Submarines",
+        "portion": "Large",
+        "image": "images/products/item_images/submarine/crispy_chicken_submarine.jpg"
+      },
+      {
+        "id": "B1017",
+        "name": "Crispy Chicken Submarine",
+        "price": 1500.0,
+        "discount": 0,
+        "category": "Submarines",
+        "portion": "Regular",
+        "image": "images/products/item_images/submarine/crispy_chicken_submarine.jpg"
+      },
+      {
+        "id": "B1018",
+        "name": "Chicken Submarine",
+        "price": 1800.0,
+        "discount": 3,
+        "category": "Submarines",
+        "portion": "Large",
+        "image": "images/products/item_images/submarine/chicken_submarine.jpg"
+      },
+      {
+        "id": "B1019",
+        "name": "Chicken Submarine",
+        "price": 1400.0,
+        "discount": 0,
+        "category": "Submarines",
+        "portion": "Regular",
+        "image": "images/products/item_images/submarine/chicken_submarine.jpg"
+      },
+      {
+        "id": "B1020",
+        "name": "Grinder Submarine",
+        "price": 2300.0,
+        "discount": 0,
+        "category": "Submarines",
+        "portion": "Regular",
+        "image": "images/products/item_images/submarine/grinder_submarine.jpg"
+      },
+      {
+        "id": "B1021",
+        "name": "Cheese Submarine",
+        "price": 2200.0,
+        "discount": 0,
+        "category": "Submarines",
+        "portion": "Regular",
+        "image": "images/products/item_images/submarine/cheese_submarine.jpg"
+      },
+      {
+        "id": "B1022",
+        "name": "Double Cheese n Chicken Submarine",
+        "price": 1900.0,
+        "discount": 16,
+        "category": "Submarines",
+        "portion": "Regular",
+        "image": "images/products/item_images/submarine/cheese_chicken_submarine.jpg"
+      },
+      {
+        "id": "B1023",
+        "name": "Special Horgie Submarine",
+        "price": 2800.0,
+        "discount": 0,
+        "category": "Submarines",
+        "portion": "Regular",
+        "image": "images/products/item_images/submarine/crispy_chicken_submarine.jpg"
+      },
+      {
+        "id": "B1024",
+        "name": "MOS Special Submarine",
+        "price": 3000.0,
+        "discount": 0,
+        "category": "Submarines",
+        "portion": "Regular",
+        "image": "images/products/item_images/submarine/mos_special_submarine.jpg"
+      },
+      {
+        "id": "B1025",
+        "name": "Steak Fries",
+        "price": 1200.0,
+        "discount": 0,
+        "category": "Fries",
+        "portion": "Large",
+        "image": "images/products/item_images/fries/steak_fries.jpg"
+      },
+      {
+        "id": "B1026",
+        "name": "Steak Fries",
+        "price": 600.0,
+        "discount": 0,
+        "category": "Fries",
+        "portion": "Medium",
+        "image": "images/products/item_images/fries/steak_fries.jpg"
+      },
+      {
+        "id": "B1027",
+        "name": "French Fries",
+        "price": 800.0,
+        "discount": 0,
+        "category": "Fries",
+        "portion": "Large",
+        "image": "images/products/item_images/fries/french_fries.jpg"
+      },
+      {
+        "id": "B1028",
+        "name": "French Fries",
+        "price": 650.0,
+        "discount": 0,
+        "category": "Fries",
+        "portion": "Medium",
+        "image": "images/products/item_images/fries/french_fries.jpg"
+      },
+      {
+        "id": "B1029",
+        "name": "French Fries (Small)",
+        "price": 450.0,
+        "discount": 0,
+        "category": "Fries",
+        "portion": "Small",
+        "image": "images/products/item_images/fries/french_fries.jpg"
+      },
+      {
+        "id": "B1030",
+        "name": "Sweet Potato Fries",
+        "price": 600.0,
+        "discount": 0,
+        "category": "Fries",
+        "portion": "Large",
+        "image": "images/products/item_images/fries/sweet_fries.jpg"
+      },
+      {
+        "id": "B1031",
+        "name": "Chicken n Cheese Pasta",
+        "price": 1600.0,
+        "discount": 15,
+        "category": "Pasta",
+        "portion": "Regular",
+        "image": "images/products/item_images/pasta/chicken_cheese_pasta.jpg"
+      },
+      {
+        "id": "B1032",
+        "name": "Chicken Penne Pasta",
+        "price": 1700.0,
+        "discount": 0,
+        "category": "Pasta",
+        "portion": "Regular",
+        "image": "images/products/item_images/pasta/penne_pasta.jpg"
+      },
+      {
+        "id": "B1033",
+        "name": "Ground Turkey Pasta Bake",
+        "price": 2900.0,
+        "discount": 10,
+        "category": "Pasta",
+        "portion": "Regular",
+        "image": "images/products/item_images/pasta/pasta_baked.jpg"
+      },
+      {
+        "id": "B1034",
+        "name": "Creamy Shrimp Pasta",
+        "price": 2000.0,
+        "discount": 0,
+        "category": "Pasta",
+        "portion": "Regular",
+        "image": "images/products/item_images/pasta/creamy_shrimp_pasta.jpg"
+      },
+      {
+        "id": "B1035",
+        "name": "Lemon Butter Pasta",
+        "price": 1950.0,
+        "discount": 0,
+        "category": "Pasta",
+        "portion": "Regular",
+        "image": "images/products/item_images/pasta/butter_pasta.jpg"
+      },
+      {
+        "id": "B1036",
+        "name": "Tagliatelle Pasta",
+        "price": 2400.0,
+        "discount": 1,
+        "category": "Pasta",
+        "portion": "Regular",
+        "image": "images/products/item_images/pasta/tagliatelle_pasta.jpg"
+      },
+      {
+        "id": "B1037",
+        "name": "Baked Ravioli",
+        "price": 2000.0,
+        "discount": 1,
+        "category": "Pasta",
+        "portion": "Regular",
+        "image": "images/products/item_images/pasta/baked_ravioli.jpg"
+      },
+      {
+        "id": "B1038",
+        "name": "Fried Chicken",
+        "price": 1200.0,
+        "discount": 0,
+        "category": "Chicken",
+        "portion": "Small",
+        "image": "images/products/item_images/chicken/fried_chicken.jpg"
+      },
+      {
+        "id": "B1039",
+        "name": "Fried Chicken",
+        "price": 2300.0,
+        "discount": 10,
+        "category": "Chicken",
+        "portion": "Regular",
+        "image": "images/products/item_images/chicken/fried_chicken.jpg"
+      },
+      {
+        "id": "B1040",
+        "name": "Fried Chicken",
+        "price": 3100.0,
+        "discount": 5,
+        "category": "Chicken",
+        "portion": "Large",
+        "image": "images/products/item_images/chicken/fried_chicken.jpg"
+      },
+      {
+        "id": "B1041",
+        "name": "Hot Wings",
+        "price": 2400.0,
+        "discount": 0,
+        "category": "Chicken",
+        "portion": "Large",
+        "image": "images/products/item_images/chicken/chicken_wings.jpg"
+      },
+      {
+        "id": "B1042",
+        "name": "Devilled Chicken",
+        "price": 900.0,
+        "discount": 0,
+        "category": "Chicken",
+        "portion": "Large",
+        "image": "images/products/item_images/chicken/devilled_chicken.jpg"
+      },
+      {
+        "id": "B1043",
+        "name": "BBQ Chicken",
+        "price": 2100.0,
+        "discount": 0,
+        "category": "Chicken",
+        "portion": "Regular",
+        "image": "images/products/item_images/chicken/bbq_chicken.jpg"
+      },
+      {
+        "id": "B1044",
+        "name": "Pepsi",
+        "price": 990.0,
+        "discount": 5,
+        "category": "Beverages",
+        "portion": "330 ml",
+        "image": "images/products/item_images/drink/pepsi.jpg"
+      },
+      {
+        "id": "B1045",
+        "name": "Coca-Cola",
+        "price": 1230.0,
+        "discount": 0,
+        "category": "Beverages",
+        "portion": "330 ml",
+        "image": "images/products/item_images/drink/coca_cola.jpg"
+      },
+      {
+        "id": "B1046",
+        "name": "Sprite",
+        "price": 1500.0,
+        "discount": 3,
+        "category": "Beverages",
+        "portion": "330 ml",
+        "image": "images/products/item_images/drink/sprite.jpg"
+      },
+      {
+        "id": "B1047",
+        "name": "Mirinda",
+        "price": 850.0,
+        "discount": 7,
+        "category": "Beverages",
+        "portion": "330 ml",
+        "image": "images/products/item_images/drink/mirinda.jpg"
+      }
+]

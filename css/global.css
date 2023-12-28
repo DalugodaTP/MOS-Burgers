@@ -33,4 +33,18 @@ li.nav-item:nth-child(6){
   margin-left: 10px;
 }
 
+.count-1{
+  display: flex;
+  width: 30px;
+  height: 30px;
+  background-color: orange;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 35px;
+  right: 50px;
+  color: black;
+}
+
 /* Edit to Footer */

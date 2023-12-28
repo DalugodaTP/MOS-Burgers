@@ -1,0 +1,152 @@
+ /* Product List */
+ 
+ .listProduct .item img {
+     width: 90%;
+ }
+
+ .listProduct {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 20px;
+ }
+
+ .listProduct .item {
+     background-color: #eeeee6;
+     padding: 20px;
+     border-radius: 20px;
+     display: grid;
+ }
+
+ .listProduct .item h2 {
+     font-weight: 500;
+     font-size: large;
+ }
+
+ .listProduct .item .price {
+    letter-spacing: 2px;
+    font-size: small;
+ }
+
+ .listProduct .item button{
+    background-color: #353432;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+ }
+
+ /* cart tab */
+
+.cartTab{
+    width: 400px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    bottom: 0;
+    inset: 90px -400px 0 auto; /*-400px to hide the tab*/
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: 1s;
+}
+
+/* display the cart on the screen */
+
+.showCart{
+    inset: 90px 0 0 auto !important; 
+}
+
+
+
+.cartTab h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+
+.cartTab .btn{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.cartTab .btn button{
+    background-color: #E88C0E;
+    border: none;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cartTab .btn .close{
+    background-color: #eee;
+
+}
+
+.cartTab .listCart .item img{
+    width: 100%;
+}
+
+.cartTab .listCart .item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.listCart .quantity span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    color: #555;
+    border-radius: 50%;
+    cursor: pointer;
+}
+ 
+
+.listCart .quantity span:nth-child(2){
+    background-color: transparent;
+    color: #eee;
+    font-family: 'Courier New', Courier, monospace
+}
+
+/* when there are multipe items, background color will change */
+
+.listCart .item:nth-child(even){
+    background-color: #eee1;
+}
+
+/* to prevent overflow on top of buttons */
+
+.listCart{
+    overflow: auto;
+}
+
+/* to hide the scroll bar */
+
+.listCart::-webkit-scrollbar{
+    width: 0;
+}
+
+.image > img:nth-child(1){
+    margin-left: 5px;
+}
+
+/* Customize for different screens */
+
+@media screen and (max-width: 992px) {
+   .listProduct{
+    grid-template-columns: repeat(3, 1fr);
+   } 
+}
+
+/* for mobile screens */
+@media screen and (max-width: 768px) {
+   .listProduct{
+    grid-template-columns: repeat(2, 1fr);
+   } 
+}
