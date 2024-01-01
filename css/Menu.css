@@ -219,11 +219,8 @@ div.col-2:nth-child(1) > input:nth-child(1){
 /* Toast */
 
 #toastBox{
-    
     position: fixed;
-    top: 700px;
-    right: 0;
-    bottom: -36px;
+    bottom: -30px;
     right: -30px;
     display: flex;
     align-items: flex-end;
@@ -232,20 +229,20 @@ div.col-2:nth-child(1) > input:nth-child(1){
     padding: 20px;
 }
 
- .toast{
+.toast{
     width: 400px;
     height: 80px;
-    background-color: #fff;
+    background: #fff;
     font-weight: 500;
+    font-size: 25px;
     margin: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
     position: relative;
     transform: translateX(100%);
-    animation: moveleft 0.3s linear forwards;
-    z-index: 999;  
-} 
+    animation: moveleft 0.5s linear forwards;
+}
 
 @keyframes moveleft {
     100%{
@@ -276,7 +273,7 @@ div.col-2:nth-child(1) > input:nth-child(1){
     width: 100%;
     height: 5px;
     background: green;
-    animation: anim 1s linear forwards;
+    animation: anim 2s linear forwards;
 }
 
 @keyframes anim {
