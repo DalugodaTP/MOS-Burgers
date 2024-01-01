@@ -39,8 +39,8 @@ let discountVal;
 //it will proceed to run initApp function - fetch data from the file
 const initApp = () => {
     //get data from jason
-    fetch('json/products.json')
-        .then(response => response.json())
+    fetch('json/products.json') //this is return a promise
+        .then(response => response.json()) //convert that promise inside that promise into a jason file
         .then(data => {
             //load the data into the array
             listProducts = data;
@@ -95,6 +95,7 @@ listProductHTML.addEventListener('click', (event) => {
     if (positionClick.classList.contains('addCart')) {
         let product_id = positionClick.parentElement.dataset.id;
         addToCart(product_id);
+        showToast(successMsg);
     }
 })
 
@@ -302,4 +303,20 @@ const addDataToHTMLCustom = (list) => {
             listProductHTML.appendChild(newProduct);
         })
     }
+}
+
+//---Toasts--------------------------
+let toastBox = document.getElementById('toastBox');
+let successMsg = '<span class="material-symbols-outlined">check_circle</span> Added to cart';
+
+
+function showToast(msg) {
+    let toast = document.createElement('div'); //create one element of div
+    toast.classList.add('toast');
+    toast.innerHTML = msg;
+    toastBox.appendChild(toast); //toast will be added into the div
+
+    setTimeout(() =>{
+        toast.remove();
+    }, 1000);
 }
