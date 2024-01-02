@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/checkOut.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Check Out</title>
     <link rel="icon" type="image/x-icon" href="/images/logo-burger.png">
 </head>
@@ -29,7 +31,7 @@
 
             <ul class="nav nav-pills">
                 <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="Menu.html" class="nav-link active">Menu</a></li>
+                <li class="nav-item"><a href="Menu.html" class="nav-link">Menu</a></li>
                 <li class="nav-item"><a href="AboutUs.html" class="nav-link">About us</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
                 <li class="nav-item"><a href="customerLogin.html" class="nav-link">Login</a></li>
@@ -50,54 +52,41 @@
 
     <!-- Content -->
 
-
     <div class="container">
-        <div class="listCart">
-            <!-- items -->
-            <div class="item">
-                <!-- addCartToHTML -->
+        <div class="row">
+            <div class="col-7">
+                <div class="cart_settings">
+                    <a href="Menu.html"><button type="button" class="btn btn-outline-primary"><span class="material-symbols-outlined btnBack">
+                        arrow_back_ios 
+                        </span>Back</button></a>
+                        
+                        <!-- <button>Back</button> -->
+                </div>
             </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="col-7">
+                <!-- Item cart view -->
+                <div class="listCart">
+                    <!-- items -->
+                    <div class="item">
+                        <!-- addCartToHTML -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
 
-
-
-    <!-- Cart Tab -->
-
-    <div class="cartTab showCart">
-        <h1 class="text-center">Check Out</h1>
-        
-
-        <table>
-            <tr>
-                <td class="lbl">Gross Amount</td>
-                <td>:</td>
-                <td id="val_1">0.00</td>
-            </tr>
-            <tr>
-                <td class="lbl">Discount</td>
-                <td>:</td>
-                <td id="val_2">0.00</td>
-            </tr>
-            <tr>
-                <td class="lbl">Total</td>
-                <td>:</td>
-                <td id="val_3">0.00</td>
-            </tr>
-        </table>
-
-        <!-- cart tab controllers -->
-        <div class="btn">
-            <button class="close">Complete</button>
-            <button class="checkOut"><a href="Menu.html" class="nav-link active">Cancel</a></button>
+            </div>
         </div>
-        <!-- ------------------- -->
+
+
+
+
+
 
     </div>
-
-
+    <!-- Toasts -->
     <div class="container">
-        <!-- Toast -->
         <div id="toastBox"></div>
     </div>
 

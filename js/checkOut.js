@@ -18,6 +18,7 @@ let carts = [];
 //--dashboard values
 let grossVal;
 let discountVal;
+let iconAmount;
 
 
 //it will proceed to run initApp function - fetch data from localStorage and store in the array
@@ -139,16 +140,13 @@ const changeQuantity = (product_id, type) => {
                 } else {
                     carts.splice(positionItemInCart, 1); //remove the item 
                     updateView();
-                    if (carts.length == 0) {
-                        document.querySelector('.cartTab').classList.toggle('showCart');
-                    }
                 }
                 break;
         }
     }
     addCartToHTML();
     addCartToMemory();
-    iconCartSpan.innerHTML = totalQuantity;
+    
 }
 
 const updateView = () => {
@@ -159,6 +157,7 @@ const updateView = () => {
 
     //get the sum of values from the array
     let totalAmount = 0;
+    let totalQuantity = 0;
     let totalDiscount = 0;
     if (carts.length > 0) {
         carts.forEach(cart => {
@@ -166,6 +165,7 @@ const updateView = () => {
             let info = listProducts[positionProduct];
             //calculate the gross amount
             totalAmount += cart.quantity * info.price;
+            totalQuantity +=cart.quantity;
 
             //calculate the discount
             totalDiscount += cart.quantity * info.price * (info.discount / 100);
@@ -174,8 +174,9 @@ const updateView = () => {
         grossAmount.innerHTML = 0;
         discVal.innerHTML = 0;
     }
-    grossAmount.innerHTML = 'Rs. ' + totalAmount;
-    discVal.innerHTML = 'Rs. ' + totalDiscount;
-    total.innerHTML = 'Rs. ' + (totalAmount - totalDiscount);
+    // grossAmount.innerHTML = 'Rs. ' + totalAmount;
+    // discVal.innerHTML = 'Rs. ' + totalDiscount;
+    // total.innerHTML = 'Rs. ' + (totalAmount - totalDiscount);
+    iconCartSpan.innerHTML = totalQuantity;
 }
 
