@@ -1,0 +1,272 @@
+/* cart tab */
+.listCart {
+    display: grid;
+    width: 700px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+.listCart .item {
+    display: grid;
+    grid-template-columns: 100px 250px 50px 100px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+
+.cartTab {
+    width: 400px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    bottom: 0;
+    inset: 90px -400px 0 auto;
+    /*-400px to hide the tab*/
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: 1s;
+}
+
+/* display the cart on the screen */
+
+.showCart {
+    inset: 90px 0 0 auto !important;
+}
+
+.cartTab h1 {
+    padding: 20px;
+    margin-top: 20px;
+    font-weight: 300;
+}
+
+.cartTab .btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 56px;
+}
+
+.cartTab .btn button {
+    background-color: #E88C0E;
+    border: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cartTab .text {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.lbl {
+    padding-left: 50px;
+    width: 200px;
+    font-family: 'Galdeano', sans-serif;
+    font-size: 20px;
+}
+
+.btn {
+    margin-top: 20px;
+}
+
+
+.cartTab .btn .close {
+    background-color: #eee;
+
+}
+
+.cartTab .listCart .item img {
+    width: 100%;
+}
+
+.cartTab .listCart .item {
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.listCart .quantity span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    color: black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+div.item> div{
+    width: 50px;
+}
+
+.count-1 {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 30px;
+}
+
+.icon-cart>svg:nth-child(1) {
+    display: flex;
+    position: absolute;
+}
+
+.listCart .item .image img{
+    width: 100px;
+    padding-right: 5px;
+}
+
+
+
+.listCart .quantity span:nth-child(2) {
+    background-color: transparent;
+    color: black;
+    font-family: 'Courier New', Courier, monospace
+}
+
+/* when there are multipe items, background color will change */
+
+.listCart .item:nth-child(even) {
+    background-color: #eee1;
+}
+
+/* to prevent overflow on top of buttons */
+
+.listCart {
+    overflow: auto;
+}
+
+/* to hide the scroll bar */
+
+.listCart::-webkit-scrollbar {
+    width: 0;
+}
+
+.image>img:nth-child(1) {
+    margin-left: 5px;
+}
+
+.view {
+    color: white;
+}
+
+/* sorting items */
+
+.container.mb-4 div.row {
+    align-items: center;
+    height: 37px;
+    vertical-align: middle;
+    margin-top: 0px;
+}
+
+.btn-selector {
+    height: 37px;
+    width: 120px;
+    color: black;
+    background-color: #E88C0E;
+    font-family: 'Galada', cursive;
+    font-size: 25px;
+    margin-top: 0px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+div.col-2:nth-child(1)>input:nth-child(1) {
+    width: 180px;
+    height: 37px;
+}
+
+
+
+/* Customize for different screens */
+
+@media screen and (max-width: 992px) {
+    .listProduct {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* for mobile screens */
+@media screen and (max-width: 768px) {
+    .listProduct {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Toast */
+
+#toastBox {
+    position: fixed;
+    bottom: -30px;
+    right: -30px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.toast {
+    width: 400px;
+    height: 80px;
+    background: #fff;
+    font-weight: 500;
+    font-size: 25px;
+    margin: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: translateX(100%);
+    animation: moveleft 0.5s linear forwards;
+}
+
+@keyframes moveleft {
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+
+/* Icon */
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    margin: 0 20px;
+    font-size: 35px;
+    color: green;
+}
+
+
+.toast::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: green;
+    animation: anim 2s linear forwards;
+}
+
+@keyframes anim {
+    100% {
+        width: 0;
+    }
+}
+
+.toast:not(.show) {
+    display: flex;
+}
