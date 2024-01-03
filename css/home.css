@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Galdeano&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-span {
+#headerSpan{
     font-family: 'Galada', cursive;
     color: rgba(255, 153, 0, 1);
 }

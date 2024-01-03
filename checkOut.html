@@ -26,7 +26,7 @@
             <a href="https://www.google.com/"
                 class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
 
-                <h1 id="logo-text">Mos <span>Burgers</span></h1>
+                <h1 id="logo-text">Mos <span id="headerSpan">Burgers</span></h1>
             </a>
 
             <ul class="nav nav-pills">
@@ -45,7 +45,6 @@
                         <span class="count-1">0</span>
                     </a>
                 </li>
-                <!-- <li><span class="count">0</span></li> -->
             </ul>
         </header>
     </div>
@@ -53,34 +52,145 @@
     <!-- Content -->
 
     <div class="container">
-        <div class="row">
-            <div class="col-7">
-                <div class="cart_settings">
-                    <a href="Menu.html"><button type="button" class="btn btn-outline-primary"><span class="material-symbols-outlined btnBack">
-                        arrow_back_ios 
-                        </span>Back</button></a>
-                        
-                        <!-- <button>Back</button> -->
+    
+    <!-- main container -->
+    <main class="container">
+        <h1 class="heading">
+            <ion-icon name="cart-outline"></ion-icon>Shopping cart
+        </h1>
+
+
+        <div class="item-flex">
+            <!-- checkput section -->
+            <section class="checkout">
+                <h2 class="section-heading">Payment Details</h2>
+
+                <!-- payment form -->
+                <div class="payment-form">
+                    <div class="payment-method">
+
+                        <button class="method selected">
+                            <ion-icon name="cash-outline"></ion-icon>
+
+                            <span>Cash</span>
+
+                            <ion-icon class="checkmark filled" name="checkmark-circle"></ion-icon>
+                        </button>
+
+                        <button class="method">
+                            <ion-icon name="card"></ion-icon>
+
+                            <span>Credit Card</span>
+
+                            <ion-icon class="checkmark" name="checkmark-circle-outline"></ion-icon>
+                        </button>
+
+                    </div>
+
+                    <form action="#">
+
+                        <div class="cardholder-name">
+                            <label for="cardholder-name" class="label-default">Cardholder Name</label>
+                            <input type="text" id="cardholder-name" name="cardholder-name" class="input-default">
+                        </div>
+
+                        <div class="card-number">
+                            <label for="card-number" class="label-default">Card number</label>
+                            <input type="text" id="card-number" name="card-number" class="input-default">
+                        </div>
+
+                        <div class="input-flex">
+
+                            <div class="expire-date">
+                                <label for="expire-date" class="label-default">Expiration date</label>
+                                <div class="input-flex">
+                                    <input type="number" name="day" id="expire-day" placeholder="31" min="1" max="31"
+                                        class="input-default">
+                                    /
+                                    <input type="number" name="month" id="expire-month" placeholder="12" min="1" max="12"
+                                        class="input-default">
+                                </div>
+                            </div>
+
+                            <div class="cvv">
+                                <label for="cvv" class="label-default">CVV</label>
+                                <input type="number" id="cvv" name="cvv" class="input-default">
+                            </div>
+
+                        </div>
+
+                    </form>
+
+
+
+
+
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-7">
-                <!-- Item cart view -->
-                <div class="listCart">
-                    <!-- items -->
+
+                <button class="btn btn-primary focus">
+                    <b>Pay</b> Rs. <span id="payAmout">1000.00</span>
+                </button>
+            </section>
+
+            <!-- Cart section -->
+            <section class="cart">
+                <div class="cartItemBox">
+                    <h2 class="section-heading">Order Summary</h2>
+                    <!-- load using Js -->
+
                     <div class="item">
                         <!-- addCartToHTML -->
                     </div>
+
                 </div>
-            </div>
-            <div class="col-6">
 
-            </div>
+                <div class="wrapper">
+
+                    <div class="discount-token">
+                        <label for="discount-token" class="label-default">Gift Card/Discount code</label>
+
+                        <div class="wrapper-flex">
+                            <input type="text" name="discount-token" id="discount-token" class="input-default">
+
+                            <button class="btn btn-outline">Apply</button>
+                        </div>
+
+                    </div>
+
+                    <div class="amount">
+                        <div class="subtotal">
+                            <span>Subtotal</span> <span>Rs. <span id="subtotal">00.00</span>
+                            </span>
+                        </div>
+
+                        <div class="discount">
+                            <span>Discount/gift</span> <span>Rs. <span id="discount">00.00</span>
+                            </span>
+                        </div>
+
+                        <div class="tax">
+                            <span>Tax (18%)</span> <span>Rs. <span id="tax">00.00</span>
+                            </span>
+                        </div>
+
+                        <div class="shipping">
+                            <span>Shipping</span> <span>Rs. <span id="shipping">00.00</span>
+                            </span>
+                        </div>
+
+                        <div class="toal">
+                            <span>Total</span> <span>Rs. <span id="total">00.00</span>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
         </div>
-
-
-
+    </main>
 
 
 
@@ -113,6 +223,8 @@
 
     <!--End-->
     <script src="js/checkOut.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

@@ -5,7 +5,7 @@
 
 
 //--get the listProduct from HTML
-let listcartHTML = document.querySelector('.listCart');
+let cartItemBoxHTML = document.querySelector('.cartItemBox');
 
 //--update the span tag with aech item
 let iconCartSpan = document.querySelector('.icon-cart span');
@@ -36,10 +36,12 @@ const initApp = () => {
             listProducts = data;
             addCartToHTML();
         })
-        
+
     //--update the final view
-    
+
 }
+
+
 
 initApp();
 
@@ -48,7 +50,7 @@ const addCartToMemory = () => {
     localStorage.setItem('cart', JSON.stringify(carts));
 }
 
-function updateCartCount(){
+function updateCartCount() {
     let totalQuantity = 0;
     if (carts.length > 0) {
         carts.forEach(list => {
@@ -57,17 +59,14 @@ function updateCartCount(){
     }
     //update the iconCartSpan class from this function
     iconCartSpan.innerHTML = totalQuantity;
-
 }
 
 
-function addCartToHTML(){
-    listcartHTML.innerHTML = '';
+function addCartToHTML() {
+    cartItemBoxHTML.innerHTML = '';
     //to update the span
-    
-    
-    if (carts.length>0) {
-        carts.forEach(list =>{
+    if (carts.length > 0) {
+        carts.forEach(list => {
             //--create a div for each item (carrier)
             let newCart = document.createElement('div');
             //--set the item class into this carrier
@@ -75,54 +74,78 @@ function addCartToHTML(){
 
             //for minus and plus
             newCart.dataset.id = list.product_id;
-            
+
             //--Fetch data from product list 
             let positionProduct = listProducts.findIndex((value) => value.id == list.product_id);
             let info = listProducts[positionProduct];
-            
+
             let total = info.price * list.quantity;
 
 
             //--insert html
             newCart.innerHTML = `
-            <div class="image">
-                <img src="${info.image}" alt="">
-            </div>
-            <div class="name">
-                ${info.name}  
-            </div>
-            <div class="itemCode">
-                ${info.id}  
-            </div>
-            <div class="totalPrice">
-                Rs.${total}
-            </div>
-            <div class="quantity">
-                <span class="minus">-</span>
-                <span>${list.quantity}</span>
-                <span class="plus">+</span>
-            </div>`;
+            <div class="product-card">
+                        <div class="card">
+                            
+                            <div class="img-box">
+                                <img src="${info.image}" alt="" width="80px"
+                                    class="product-img">
+                            </div>
+
+                            <div class="detail">
+                                <h4 class="product-name">${info.name}</h4>${list.product_id}
+
+                                <div class="wrapper">
+                                    <div class="product-qty">
+                                    <button class="minus" data-product-id="${list.product_id}">
+                                        <ion-icon name="remove-outline"></ion-icon>
+                                    </button>
+                            
+                                    <span class="quantity">${list.quantity}</span>
+                            
+                                    <button class="plus" data-product-id="${list.product_id}">
+                                        <ion-icon name="add-outline"></ion-icon>
+                                    </button>   
+                                </div>
+
+                                <div class="price">
+                                    Rs. <span class="price">${total}</span>
+                                </div>
+                                </div>
+                            </div>
+
+                            <button class="product-close-btn" data-product-id="${list.product_id}">
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>`;
 
             //--insert the carrier into the container
-            listcartHTML.appendChild(newCart);
+            cartItemBoxHTML.appendChild(newCart);
         })
     }
+    updateView();
 }
 
+// Add or remove items from the cart
 
+// Inside your initApp function or at the end of your script
+document.addEventListener('click', (event) => {
+    let targetElement = event.target;
 
-//to order to remove items, catch the event when user clicks on the cart
-listcartHTML.addEventListener('click', (event) => {
-    let positionClick = event.target;
-    if (positionClick.classList.contains('minus') || positionClick.classList.contains('plus')) {
-        let product_id = positionClick.parentElement.parentElement.dataset.id;
-        let type = 'minus';
-        if (positionClick.classList.contains('plus')) {
-            type = 'plus';
+    // Check if the clicked element has the class 'minus' or 'plus'
+    if (targetElement.classList.contains('minus') || targetElement.classList.contains('plus')) {
+        let product_id = targetElement.dataset.productId;
+
+        if (product_id) {
+            let type = targetElement.classList.contains('minus') ? 'minus' : 'plus';
+
+            // Call the changeQuantity function with the product_id and type
+            changeQuantity(product_id, type);
         }
-        changeQuantity(product_id, type);
     }
-})
+});
+
 
 //change the quantity in the local memory
 const changeQuantity = (product_id, type) => {
@@ -146,14 +169,50 @@ const changeQuantity = (product_id, type) => {
     }
     addCartToHTML();
     addCartToMemory();
-    
+    updateView();
 }
+
+//remove the item when cancel is clicked
+
+// Inside your initApp function or at the end of your script
+document.addEventListener('click', (event) => {
+    let targetElement = event.target.parentElement;
+    
+
+    // Check if the clicked element has the class 'minus' or 'plus'
+    if (targetElement.classList.contains('product-close-btn')) {
+        let product_id = targetElement.dataset.productId;
+        
+        if (product_id) {
+            // Call a function to handle the removal of the item with the given product_id
+            removeItem(product_id);
+        }
+    }
+});
+
+
+// Add a new function to handle the removal of items
+const removeItem = (product_id) => {
+    let positionItemInCart = carts.findIndex((value) => value.product_id == product_id);
+
+    if (positionItemInCart >= 0) {
+        carts.splice(positionItemInCart, 1); // Remove the item
+        addCartToHTML();
+        addCartToMemory();
+        updateView();
+    }else{
+        updateView();
+    }
+};
 
 const updateView = () => {
     //capture two outputs
-    // let grossAmount = document.getElementById('val_1');
-    // let discVal = document.getElementById('val_2');
-    // let total = document.getElementById('val_3');
+    let grossAmount = document.getElementById('subtotal');
+    let taxVal = document.getElementById('tax');
+    let shipppingVal = document.getElementById('shipping');
+    let discVal = document.getElementById('discount');
+    let total = document.getElementById('total');
+
 
     //get the sum of values from the array
     let totalAmount = 0;
@@ -165,18 +224,29 @@ const updateView = () => {
             let info = listProducts[positionProduct];
             //calculate the gross amount
             totalAmount += cart.quantity * info.price;
-            totalQuantity +=cart.quantity;
+            totalQuantity += cart.quantity;
 
             //calculate the discount
             totalDiscount += cart.quantity * info.price * (info.discount / 100);
+            console.log(totalDiscount);
         })
     } else {
+        iconCartSpan.innerHTML = totalQuantity;
         grossAmount.innerHTML = 0;
         discVal.innerHTML = 0;
+        taxVal.innerHTML =0;
+
     }
-    // grossAmount.innerHTML = 'Rs. ' + totalAmount;
-    // discVal.innerHTML = 'Rs. ' + totalDiscount;
-    // total.innerHTML = 'Rs. ' + (totalAmount - totalDiscount);
+
+    taxVal.innerHTML = (totalAmount*(18/100)).toLocaleString();
+    grossAmount.innerHTML = (totalAmount).toLocaleString();
+    discVal.innerHTML = (totalDiscount).toLocaleString();
+    total.innerHTML = (totalAmount +totalAmount*(18/100)- totalDiscount).toLocaleString();
     iconCartSpan.innerHTML = totalQuantity;
+
+    //update pay button
+    let payBtn = document.getElementById('payAmout');
+
+    payBtn.innerHTML = (totalAmount +totalAmount*(18/100)- totalDiscount).toLocaleString();
 }
 
